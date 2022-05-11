@@ -6,7 +6,6 @@ export const Carousel = ({ data }) => {
 	return (
 		<div
 			id='carousel-main'
-			// onScrol={(e) => console.log('##', e)}
 			className='cards-carousel'
 		>
 			{data.map((image, index) => (
