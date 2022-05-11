@@ -1,0 +1,62 @@
+.App {
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f8fb;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 25px;
+}
+.header > h1 {
+    color: #166d88;
+    font-size: 2.6rem;
+}
+
+.header > button {
+    color: #166d88;
+    padding: 10px 18px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    background-color: #d0dce6;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    pointer: cursor;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header > button:active {
+    color: #166e99;
+    box-shadow: none;
+}
+
+.header > button > img {
+    height: 20px;
+}
+.cards-scroll {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.cards-scroll > button {
+    border: none;
+    padding: 0.8rem 0.9rem;
+    margin: 2rem 0.7rem;
+    background-color: #dfe9f0;
+    border-radius: 10px;
+}
+.cards-scroll > button:active {
+    background-color: #d0dce6;
+}
+.cards-scroll > button > img {
+    width: 2rem;
+}
+.color-filter {
+    filter: invert(33%) sepia(79%) saturate(502%) hue-rotate(147deg)
+        brightness(90%) contrast(89%);
+}

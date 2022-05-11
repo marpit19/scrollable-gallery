@@ -1,0 +1,77 @@
+.card-container {
+    position: relative;
+    padding: 0px 12px;
+}
+
+.card-container > img {
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.card-info {
+    opacity: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    height: auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    background-color: 'green';
+    display: flex;
+    align-items: center;
+    background: -moz-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+    background: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+
+    width: 100%;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.photographer-details > p {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+.photographer-details > span {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-info > img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+@media (max-width: 720px) {
+    .card-info > img {
+        height: 30px;
+        width: 30px;
+    }
+    .photographer-details > p {
+        font-size: 0.7rem;
+    }
+    .photographer-details > span {
+        font-size: 0.7rem;
+    }
+}

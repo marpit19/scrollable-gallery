@@ -1,0 +1,10 @@
+.cards-carousel {
+    display: flex;
+    width: full;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.cards-carousel::-webkit-scrollbar {
+    display: none;
+}
