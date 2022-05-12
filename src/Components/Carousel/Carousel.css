@@ -1,5 +1,7 @@
 .cards-carousel {
     display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
     width: full;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -7,4 +9,11 @@
 
 .cards-carousel::-webkit-scrollbar {
     display: none;
+}
+
+@media (max-width: 720px) {
+    .cards-carousel{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 }

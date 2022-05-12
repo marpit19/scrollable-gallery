@@ -46,15 +46,32 @@
 }
 
 .photographer-details > p {
+    font-size: 0.7rem;
     padding: 0;
     margin: 0;
     font-weight: 700;
 }
 
 .photographer-details > span {
+    font-size: 0.7rem;
     padding: 0;
     margin: 0;
     font-weight: 600;
+}
+
+.download {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.download > a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
 }
 
 .card-info > img {
@@ -73,5 +90,8 @@
     }
     .photographer-details > span {
         font-size: 0.7rem;
+    }
+    .download{
+        font-size: 0.6rem;
     }
 }

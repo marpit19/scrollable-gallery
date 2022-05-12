@@ -1,8 +1,8 @@
 .App {
     height: 100vh;
     width: 100vw;
-    background-color: #f5f8fb;
     overflow: hidden;
+    background: linear-gradient(#C2F0FF, #FFFFFF);
 }
 
 .header {
@@ -10,6 +10,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 5px 25px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .header > h1 {
     color: #166d88;
@@ -35,7 +37,7 @@
     box-shadow: none;
 }
 
-.header > button > img {
+.header > buQeKhrpQo6kuHZZUebvFxV1OD2bJMExLwyT2f6TflsBEtton > img {
     height: 20px;
 }
 .cards-scroll {
@@ -44,6 +46,7 @@
     justify-content: center;
 }
 .cards-scroll > button {
+    font-size: 1.5rem;
     border: none;
     padding: 0.8rem 0.9rem;
     margin: 2rem 0.7rem;
@@ -59,4 +62,31 @@
 .color-filter {
     filter: invert(33%) sepia(79%) saturate(502%) hue-rotate(147deg)
         brightness(90%) contrast(89%);
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+    .header {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header > h1 {
+        font-size: 1rem;
+    }
+    .header > button {
+        font-size: 1rem;
+        padding: 5px 9px;
+    }
+    .cards-scroll > button {
+        font-size: 1rem;
+    }
 }
