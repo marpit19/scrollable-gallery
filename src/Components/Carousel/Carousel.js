@@ -4,10 +4,7 @@ import "./Carousel.css";
 
 export const Carousel = ({ data }) => {
 	return (
-		<div
-			id='carousel-main'
-			className='cards-carousel'
-		>
+		<div id='carousel-main' className='cards-carousel'>
 			{data.map((image, index) => (
 				<Card {...image} />
 			))}

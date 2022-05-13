@@ -8,11 +8,11 @@ import { AiOutlineRight } from "react-icons/ai";
 import { BiShuffle } from "react-icons/bi";
 
 const getApiForRandomPhoto = (count) => {
-	return `https://api.unsplash.com/photos/random/?count=${count}&client_id=haxmA_JmfVAFva4kzgkcnS-Vd8-bfXWKFVteJjJDJM8`;
+	return `https://api.unsplash.com/photos/random/?count=${count}&client_id=OJ4yUPZLOSpStXMatBbzwrC8_OGce0oeKGIW8ORF55I`;
 };
 
 const getApiForSearch = (photo) => {
-    return `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=haxmA_JmfVAFva4kzgkcnS-Vd8-bfXWKFVteJjJDJM8`;
+	return `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=OJ4yUPZLOSpStXMatBbzwrC8_OGce0oeKGIW8ORF55I`;
 };
 
 function randomIntFromInterval(min, max) {
@@ -26,26 +26,46 @@ const getRandomPhoto = async () => {
 	return data;
 };
 
-const searchPhoto = async (photo) => {
-    const apiPath = getApiForSearch(photo);
-    const {data} = await axios.get(apiPath);
-    return data.results;
-}
+//const searchPhoto = async (photo) => {
+//	//const apiPath = getApiForSearch(photo);
+//	const apiPath = `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=haxmA_JmfVAFva4kzgkcnS-Vd8-bfXWKFVteJjJDJM8`;
+//	//console.log(apiPath);
+//	const { data } = await axios.get(apiPath);
+//	return data.results;
+//};
 
 function App() {
 	const [childIndex, setChildIndex] = React.useState(0);
 	const [data, setData] = React.useState([]);
 	const [photo, setPhoto] = React.useState("");
 
+	const searchPhoto = async (photo) => {
+		//const apiPath = getApiForSearch(photo);
+		const apiPath = `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=OJ4yUPZLOSpStXMatBbzwrC8_OGce0oeKGIW8ORF55I`;
+		//console.log(apiPath);
+		const { data } = await axios.get(apiPath);
+		return data.results;
+	};
+
 	const handleChange = (event) => {
 		setPhoto(event.target.value);
+		console.log(photo);
 	};
 
 	const handleSubmit = () => {
-        searchPhoto(photo.results).then((photos)=>{
-            console.log(photos);
-            setData(photos);
-        })
+		searchPhoto(photo.results).then((photos) => {
+			setData(photos);
+		});
+	};
+
+	const fetchRequest = async () => {
+		const data1 = await fetch(
+			`https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=OJ4yUPZLOSpStXMatBbzwrC8_OGce0oeKGIW8ORF55I`
+		);
+		const dataJ = await data1.json();
+		const result = dataJ.results;
+		console.log(result);
+		setData(result);
 	};
 
 	const randomizeImages = () => {
@@ -55,7 +75,8 @@ function App() {
 	};
 
 	React.useEffect(() => {
-        handleSubmit();
+		fetchRequest();
+		handleSubmit();
 		randomizeImages();
 	}, []);
 
@@ -83,15 +104,15 @@ function App() {
 	return (
 		<div className='App'>
 			<div className='header'>
-				<h1>Gallery</h1>
+				<h1 onClick={() => window.location.reload(false)}>Gallery</h1>
 				<input
-					onChange={handleChange}
+					onChange={(e) => setPhoto(e.target.value)}
 					type='text'
 					name='photo'
 					placeholder='Search for Photos...'
 					className='search'
 				/>
-				<button onClick={handleSubmit} type='submit'>
+				<button onClick={fetchRequest} type='submit'>
 					Search
 				</button>
 				<button onClick={randomizeImages}>

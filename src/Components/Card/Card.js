@@ -24,9 +24,9 @@ export const Card = (props) => {
 					<p>{`${props.user.first_name} ${props.user.last_name}`}</p>
 					<span>{`${props.likes} likes recieved`}</span>
 					<div className='download'>
-							<a href={imageURL} target='_blank' onClick={downloadImage}>
-								<BiDownload />
-							</a>
+						<a href={imageURL} target='_blank' onClick={downloadImage}>
+							<BiDownload />
+						</a>
 					</div>
 				</div>
 			</div>
